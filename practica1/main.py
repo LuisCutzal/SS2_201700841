@@ -1,5 +1,5 @@
 import pyodbc
-from database import borrarModelo
+from database import borrarModelo, crearModelo
 
 server = 'CUTZALL\\SQLEXPRESS'
 database = 'practica1'
@@ -8,11 +8,33 @@ password = 'C0malap@123'
 
 def connect_to_db():
     try:
+        # Intenta conectarte a la base de datos especificada
         conexion = pyodbc.connect(f'DRIVER={{SQL Server}};SERVER={server};DATABASE={database};UID={username};PWD={password}')
         return conexion
     except pyodbc.Error as e:
-        print(f"Error al conectar a la base de datos: {e}")
-        return None
+        if 'Cannot open database' in str(e):
+            print(f"La base de datos '{database}' no existe. Creándola...")
+            # Conéctate a 'master' para crear la base de datos
+            conexion = pyodbc.connect(f'DRIVER={{SQL Server}};SERVER={server};DATABASE=master;UID={username};PWD={password}')
+            crear_base_datos(conexion, database)
+            conexion.close()
+            # Intenta conectarte nuevamente a la base de datos recién creada
+            conexion = pyodbc.connect(f'DRIVER={{SQL Server}};SERVER={server};DATABASE={database};UID={username};PWD={password}')
+            return conexion
+        else:
+            print(f"Error al conectar a la base de datos: {e}")
+            return None
+
+def crear_base_datos(conexion, nombre_bd):
+    try:
+        cursor = conexion.cursor()
+        # Ejecuta el comando CREATE DATABASE sin transacción
+        cursor.execute(f"USE master; CREATE DATABASE {nombre_bd};")
+        print(f"Base de datos '{nombre_bd}' creada exitosamente.")
+    except pyodbc.Error as e:
+        print(f"Error al crear la base de datos: {e}")
+    finally:
+        cursor.close()
 
 def menu():
     while True:
@@ -33,7 +55,8 @@ def menu():
                 borrarModelo(conexion)
                 conexion.close()
         elif eleccion == '2':
-            print("2")
+            conexion = connect_to_db()
+            
         elif eleccion == '3':
             print("3")
         elif eleccion == '4':
