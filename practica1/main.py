@@ -1,40 +1,39 @@
 import pyodbc
-from database import borrarModelo, crearModelo
-
+from database import crearModelo
 server = 'CUTZALL\\SQLEXPRESS'
-database = 'practica1'
 username = 'luisc'
 password = 'C0malap@123'
 
-def connect_to_db():
+def connect_to_sql_server():
     try:
-        # Intenta conectarte a la base de datos especificada
-        conexion = pyodbc.connect(f'DRIVER={{SQL Server}};SERVER={server};DATABASE={database};UID={username};PWD={password}')
+        # Conexión al servidor SQL con autenticación de Windows y autocommit=True
+        conexion = pyodbc.connect(f'DRIVER={{SQL Server}};SERVER={server};Trusted_Connection=yes;', autocommit=True)
+        #conexion = pyodbc.connect(f'DRIVER={{SQL Server}};SERVER={server};UID={username};PWD={password}', autocommit=True)
         return conexion
     except pyodbc.Error as e:
-        if 'Cannot open database' in str(e):
-            print(f"La base de datos '{database}' no existe. Creándola...")
-            # Conéctate a 'master' para crear la base de datos
-            conexion = pyodbc.connect(f'DRIVER={{SQL Server}};SERVER={server};DATABASE=master;UID={username};PWD={password}')
-            crear_base_datos(conexion, database)
-            conexion.close()
-            # Intenta conectarte nuevamente a la base de datos recién creada
-            conexion = pyodbc.connect(f'DRIVER={{SQL Server}};SERVER={server};DATABASE={database};UID={username};PWD={password}')
-            return conexion
-        else:
-            print(f"Error al conectar a la base de datos: {e}")
-            return None
+        print(f"Error al conectar a SQL Server: {e}")
+        return None
 
-def crear_base_datos(conexion, nombre_bd):
+def connect_to_database(nombre_bd):
     try:
-        cursor = conexion.cursor()
-        # Ejecuta el comando CREATE DATABASE sin transacción
-        cursor.execute(f"USE master; CREATE DATABASE {nombre_bd};")
-        print(f"Base de datos '{nombre_bd}' creada exitosamente.")
+        conexion = pyodbc.connect(f'DRIVER={{SQL Server}};SERVER={server};DATABASE={nombre_bd};Trusted_Connection=yes;', autocommit=True)
+        return conexion
+    except pyodbc.Error as e:
+        print(f"Error al conectar a la base de datos '{nombre_bd}': {e}")
+        return None
+
+
+def crear_base_datos(nombre_bd):
+    try:
+        conexion = connect_to_sql_server()
+        if conexion:
+            cursor = conexion.cursor()
+            cursor.execute(f"CREATE DATABASE {nombre_bd}")
+            print(f"Base de datos '{nombre_bd}' creada exitosamente.")  
+            cursor.close()
+            conexion.close()
     except pyodbc.Error as e:
         print(f"Error al crear la base de datos: {e}")
-    finally:
-        cursor.close()
 
 def menu():
     while True:
@@ -50,19 +49,19 @@ def menu():
         eleccion = input("Selecciona una opción (1-6): ")
         
         if eleccion == '1':
-            conexion = connect_to_db()
-            if conexion:
-                borrarModelo(conexion)
-                conexion.close()
+            print("Opción 1 seleccionada.")
         elif eleccion == '2':
-            conexion = connect_to_db()
-            
+            nombre_bd = input("Ingresa el nombre del Modelo: ")
+            crear_base_datos(nombre_bd)
+            conexion = connect_to_database(nombre_bd)
+            crearModelo(conexion)
+            conexion.close()
         elif eleccion == '3':
-            print("3")
+            print("Opción 3 seleccionada.")
         elif eleccion == '4':
-            print("4")
+            print("Opción 4 seleccionada.")
         elif eleccion == '5':
-            print("5")
+            print("Opción 5 seleccionada.")            
         elif eleccion == '6':
             print("Saliendo del programa...")
             break

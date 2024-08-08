@@ -50,13 +50,13 @@ def crearModelo(conexion):
                        CREATE TABLE vuelo(
                            Id_vuelo INT IDENTITY(1,1) PRIMARY KEY,
                            Fecha_salida DATE NOT NULL,
-                           Estado VARCHAR(50), NOT NULL,
+                           Estado VARCHAR(50) NOT NULL,
                            Id_pasajero INT NOT NULL, 
                            Id_aeropuerto INT NOT NULL,
                            Id_piloto INT NOT NULL,
                            FOREIGN KEY (Id_pasajero) REFERENCES pasajero(Id_pasajero),
-                           FOREING KEY (Id_aeropuerto) REFERENCES aeropuerto(Id_aeropuerto),
-                           FOREING KEY (Id_piloto) REFERENCES piloto(Id_piloto)
+                           FOREIGN KEY (Id_aeropuerto) REFERENCES aeropuerto(Id_aeropuerto),
+                           FOREIGN KEY (Id_piloto) REFERENCES piloto(Id_piloto)
                        )
                        """)
         conexion.commit()
