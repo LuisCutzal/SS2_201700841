@@ -1,5 +1,5 @@
 import pyodbc
-
+from database import borrarModelo
 
 server = 'CUTZALL\\SQLEXPRESS'
 database = 'practica1'
@@ -8,8 +8,8 @@ password = 'C0malap@123'
 
 def connect_to_db():
     try:
-        conn = pyodbc.connect(f'DRIVER={{SQL Server}};SERVER={server};DATABASE={database};UID={username};PWD={password}')
-        return conn
+        conexion = pyodbc.connect(f'DRIVER={{SQL Server}};SERVER={server};DATABASE={database};UID={username};PWD={password}')
+        return conexion
     except pyodbc.Error as e:
         print(f"Error al conectar a la base de datos: {e}")
         return None
@@ -28,7 +28,10 @@ def menu():
         eleccion = input("Selecciona una opción (1-6): ")
         
         if eleccion == '1':
-            print("1")
+            conexion = connect_to_db()
+            if conexion:
+                borrarModelo(conexion)
+                conexion.close()
         elif eleccion == '2':
             print("2")
         elif eleccion == '3':
