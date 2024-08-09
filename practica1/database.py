@@ -1,16 +1,45 @@
 import pyodbc
 
-def borrarModelo(conexion):
+def limpiar_modelo(conexion):
     try:
         cursor = conexion.cursor()
-        cursor.execute('DROP TABLE IF EXIST vuelos')
-        cursor.execute('DROP TABLE IF EXIST pasajero')
-        cursor.execute('DROP TABLE IF EXIST piloto')
-        cursor.execute('DROP TABLE IF EXIST aeropuerto')
+        # Obtener una lista de todas las tablas en la base de datos
+        cursor.execute("SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE'")
+        tablas = cursor.fetchall()
+        for tabla in tablas:
+            tabla_nombre = tabla[0]
+            try:
+                cursor.execute(f"TRUNCATE TABLE {tabla_nombre}")
+                print(f"Datos eliminados de la tabla: {tabla_nombre}")
+            except pyodbc.Error as e:
+                try:
+                    cursor.execute(f"DELETE FROM {tabla_nombre}")
+                    print(f"Datos eliminados de la tabla (usando DELETE): {tabla_nombre}")
+                except pyodbc.Error as e:
+                    print(f"Error al eliminar datos de la tabla {tabla_nombre}: {e}")
+        for tabla in tablas:
+            tabla_nombre = tabla[0]
+            try:
+                cursor.execute(f"DROP TABLE {tabla_nombre}")
+                print(f"Tabla eliminada: {tabla_nombre}")
+            except pyodbc.Error as e:
+                print(f"Error al eliminar la tabla {tabla_nombre}: {e}")
         conexion.commit()
-        print("Se elimino el modelo correctamente")
+        print("Se limpiaron y eliminaron las tablas correctamente")
     except pyodbc.Error as e:
-        print(f"Error al eliminar las tabla: {e}")
+        print(f"Error al limpiar las tablas: {e}")
+    finally:
+        cursor.close()
+
+def eliminar_base_de_datos(conexion, nombre_bd):
+    try:
+        cursor = conexion.cursor()
+        cursor.execute("USE master") #se debe de cambiar a la base de datos master   
+        cursor.execute(f"DROP DATABASE [{nombre_bd}]")
+        conexion.commit()
+        print(f"Se eliminó la base de datos '{nombre_bd}' correctamente")
+    except pyodbc.Error as e:
+        print(f"Error al eliminar la base de datos: {e}")
     finally:
         cursor.close()
 

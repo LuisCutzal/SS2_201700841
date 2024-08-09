@@ -1,5 +1,5 @@
 import pyodbc
-from database import crearModelo
+from database import crearModelo, limpiar_modelo, eliminar_base_de_datos
 server = 'CUTZALL\\SQLEXPRESS'
 username = 'luisc'
 password = 'C0malap@123'
@@ -8,6 +8,7 @@ def connect_to_sql_server():
     try:
         # Conexión al servidor SQL con autenticación de Windows y autocommit=True
         conexion = pyodbc.connect(f'DRIVER={{SQL Server}};SERVER={server};Trusted_Connection=yes;', autocommit=True)
+        #coneccion con usuario y password
         #conexion = pyodbc.connect(f'DRIVER={{SQL Server}};SERVER={server};UID={username};PWD={password}', autocommit=True)
         return conexion
     except pyodbc.Error as e:
@@ -50,6 +51,11 @@ def menu():
         
         if eleccion == '1':
             print("Opción 1 seleccionada.")
+            nombre_bd = input("Ingresa el nombre del Modelo: ")
+            conexion = connect_to_database(nombre_bd)
+            limpiar_modelo(conexion)
+            #eliminar_base_de_datos(conexion, nombre_bd)
+            conexion.close()
         elif eleccion == '2':
             nombre_bd = input("Ingresa el nombre del Modelo: ")
             crear_base_datos(nombre_bd)
