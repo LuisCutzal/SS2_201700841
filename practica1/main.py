@@ -1,5 +1,7 @@
 import pyodbc
+import os
 from database import crearModelo, limpiar_modelo, eliminar_base_de_datos
+from elt import extract_information, clean_and_load_data
 server = 'CUTZALL\\SQLEXPRESS'
 username = 'luisc'
 password = 'C0malap@123'
@@ -36,6 +38,11 @@ def crear_base_datos(nombre_bd):
     except pyodbc.Error as e:
         print(f"Error al crear la base de datos: {e}")
 
+def get_relative_path(file_name):
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    file_path = os.path.join(current_dir, file_name)
+    return file_path
+
 def menu():
     while True:
         print("***************************")
@@ -64,8 +71,18 @@ def menu():
             conexion.close()
         elif eleccion == '3':
             print("Opción 3 seleccionada.")
+            nombre_bd = input("Ingresa el nombre del Modelo: ")
+            conexion = connect_to_database(nombre_bd)
+            file_name = 'VuelosDataSet.csv'
+            relative_path = get_relative_path(file_name)
+            extract_information(relative_path, conexion)
+            conexion.close()
         elif eleccion == '4':
             print("Opción 4 seleccionada.")
+            nombre_bd = input("Ingresa el nombre del Modelo: ")
+            conexion = connect_to_database(nombre_bd)
+            clean_and_load_data(conexion)
+            conexion.close()
         elif eleccion == '5':
             print("Opción 5 seleccionada.")            
         elif eleccion == '6':

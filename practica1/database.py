@@ -47,7 +47,7 @@ def crearModelo(conexion):
     try:
         cursor = conexion.cursor()
         cursor.execute("""
-                       CREATE TABLE pasajero(
+                       CREATE TABLE Pasajero(
                            Id_pasajero INT IDENTITY(1,1) PRIMARY KEY,
                            Identificacion VARCHAR(50) NOT NULL,
                            Nombre VARCHAR(50) NOT NULL,
@@ -59,33 +59,43 @@ def crearModelo(conexion):
                        """)
         
         cursor.execute("""
-                       CREATE TABLE aeropuerto(
+                       CREATE TABLE Aeropuerto(
                            Id_aeropuerto INT IDENTITY(1,1) PRIMARY KEY,
-                           Codigo_aeropuerto VARCHAR(15) NOT NULL,
                            Nombre VARCHAR(100) NOT NULL,
+                           Codigo_aeropuerto VARCHAR(50) NOT NULL,
                            Pais VARCHAR(50) NOT NULL,
                            Continente_aeropuerto VARCHAR(50) NOT NULL
                        )
                        """)
         
         cursor.execute("""
-                       CREATE TABLE piloto(
+                       CREATE TABLE Piloto(
                            Id_piloto INT IDENTITY(1,1) PRIMARY KEY,
-                           Nombre VARCHAR(50) NOT NULL
+                           Nombre VARCHAR(255) NOT NULL
                        )
                        """)
         
         cursor.execute("""
-                       CREATE TABLE vuelo(
+                       CREATE TABLE Fecha(
+                           Id_fecha INT IDENTITY(1,1) PRIMARY KEY,
+                           Year INT NOT NULL,
+                           Month INT NOT NULL,
+                           Day INT NOT NULL
+                       )
+                       """)
+        
+        cursor.execute("""
+                       CREATE TABLE Vuelo(
                            Id_vuelo INT IDENTITY(1,1) PRIMARY KEY,
-                           Fecha_salida DATE NOT NULL,
                            Estado VARCHAR(50) NOT NULL,
                            Id_pasajero INT NOT NULL, 
                            Id_aeropuerto INT NOT NULL,
                            Id_piloto INT NOT NULL,
-                           FOREIGN KEY (Id_pasajero) REFERENCES pasajero(Id_pasajero),
-                           FOREIGN KEY (Id_aeropuerto) REFERENCES aeropuerto(Id_aeropuerto),
-                           FOREIGN KEY (Id_piloto) REFERENCES piloto(Id_piloto)
+                           Id_fecha INT NOT NULL,
+                           FOREIGN KEY (Id_pasajero) REFERENCES Pasajero(Id_pasajero),
+                           FOREIGN KEY (Id_aeropuerto) REFERENCES Aeropuerto(Id_aeropuerto),
+                           FOREIGN KEY (Id_piloto) REFERENCES Piloto(Id_piloto),
+                           FOREIGN KEY (Id_fecha) REFERENCES Fecha(Id_fecha)
                        )
                        """)
         conexion.commit()
