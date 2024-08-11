@@ -3,31 +3,35 @@ import pyodbc
 def limpiar_modelo(conexion):
     try:
         cursor = conexion.cursor()
-        # Obtener una lista de todas las tablas en la base de datos
         cursor.execute("SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE'")
         tablas = cursor.fetchall()
+        #quitar restricciones de las llaves forameas
+        for tabla in tablas:
+            tabla_nombre = tabla[0]
+            try:
+                cursor.execute(f"ALTER TABLE {tabla_nombre} NOCHECK CONSTRAINT ALL")
+            except pyodbc.Error as e:
+                print(f"Error al deshabilitar las claves foráneas en la tabla {tabla_nombre}: {e}")
         for tabla in tablas:
             tabla_nombre = tabla[0]
             try:
                 cursor.execute(f"TRUNCATE TABLE {tabla_nombre}")
-                print(f"Datos eliminados de la tabla: {tabla_nombre}")
             except pyodbc.Error as e:
                 try:
                     cursor.execute(f"DELETE FROM {tabla_nombre}")
-                    print(f"Datos eliminados de la tabla (usando DELETE): {tabla_nombre}")
                 except pyodbc.Error as e:
                     print(f"Error al eliminar datos de la tabla {tabla_nombre}: {e}")
+        # agregar las restricciones de las llaves foraneas
         for tabla in tablas:
             tabla_nombre = tabla[0]
             try:
-                cursor.execute(f"DROP TABLE {tabla_nombre}")
-                print(f"Tabla eliminada: {tabla_nombre}")
+                cursor.execute(f"ALTER TABLE {tabla_nombre} WITH CHECK CHECK CONSTRAINT ALL")
             except pyodbc.Error as e:
-                print(f"Error al eliminar la tabla {tabla_nombre}: {e}")
+                print(f"Error al rehabilitar las claves foráneas en la tabla {tabla_nombre}: {e}")
         conexion.commit()
-        print("Se limpiaron y eliminaron las tablas correctamente")
+        print("Se limpiaron los datos de las tablas correctamente")
     except pyodbc.Error as e:
-        print(f"Error al limpiar las tablas: {e}")
+        print(f"Error al limpiar los datos: {e}")
     finally:
         cursor.close()
 
