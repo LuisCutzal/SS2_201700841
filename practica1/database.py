@@ -74,16 +74,7 @@ def crearModelo(conexion):
                            Nombre VARCHAR(255) NOT NULL
                        )
                        """)
-        
-        cursor.execute("""
-                       CREATE TABLE Fecha(
-                           Id_fecha INT IDENTITY(1,1) PRIMARY KEY,
-                           Year INT NOT NULL,
-                           Month INT NOT NULL,
-                           Day INT NOT NULL
-                       )
-                       """)
-        
+                
         cursor.execute("""
                        CREATE TABLE Vuelo(
                            Id_vuelo INT IDENTITY(1,1) PRIMARY KEY,

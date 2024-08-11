@@ -4,22 +4,16 @@ import re
 def preprocess_csv(input_file_path, output_file_path):
     with open(input_file_path, 'r', newline='', encoding='utf-8') as infile, \
          open(output_file_path, 'w', newline='', encoding='utf-8') as outfile:
-        
-        # Leer el archivo línea por línea
         for line in infile:
             # Verificar si la línea contiene comillas dobles
             if '"' in line:
                 # Si la línea contiene comillas dobles, omitirla
                 continue
-
-            # Escribir la línea en el archivo de salida si no contiene comillas dobles
             outfile.write(line)
-
 
 def extract_information(file_path, conexion):
     try:
         cursor = conexion.cursor()
-        
         # Crear o reemplazar la tabla temporal
         cursor.execute('''
         IF OBJECT_ID('TempData', 'U') IS NOT NULL
@@ -43,13 +37,8 @@ def extract_information(file_path, conexion):
             FlightStatus VARCHAR(250)
         );
         ''')
-
-        # Usar la ruta del archivo CSV procesado
         processed_file_path = file_path.replace('.csv', '_processed.csv')
-
-        # Ejecutar el preprocesamiento
         preprocess_csv(file_path, processed_file_path)
-        
         # Cargar los datos desde el archivo CSV procesado
         cursor.execute(f'''
         BULK INSERT TempData
@@ -62,7 +51,6 @@ def extract_information(file_path, conexion):
             CODEPAGE = '65001'
         );
         ''')
-
         conexion.commit()
         print("Extracción completada con éxito.")
     except Exception as e:
@@ -74,7 +62,6 @@ def extract_information(file_path, conexion):
 def clean_and_load_data(conexion):
     try:
         cursor = conexion.cursor()
-
         # Limpiar datos
         cursor.execute("""
         UPDATE TempData
@@ -133,9 +120,7 @@ def clean_and_load_data(conexion):
         WHERE rn > 1;
         """)
 
-        
-
-        # Insertar datos en las tablas de dimensiones
+        # Insertar datos en las tablas de Dimensiones
         cursor.execute("""
         INSERT INTO Pasajero (Identificacion, Nombre, Apellido, Sexo, Edad, Nacionalidad)
         SELECT DISTINCT PassengerID, FirstName, LastName, Gender, Age, Nationality
@@ -154,7 +139,7 @@ def clean_and_load_data(conexion):
         FROM TempData;
         """)
 
-        # Insertar datos en la tabla hechos_vuelo
+        # Insertar datos en la tabla Hecho
         cursor.execute("""
         INSERT INTO Vuelo (Estado, Fecha, Id_pasajero, Id_aeropuerto)
         SELECT 
