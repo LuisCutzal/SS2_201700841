@@ -1,0 +1,111 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="77759F0E-BEB0-25BB-8733-4804056DD1B7" name="Pasajero">
+<createdBy>cutza</createdBy>
+<createdTime>2024-08-05 23:13:10 UTC</createdTime>
+<ownerDesignName>ModeloEstrella</ownerDesignName>
+<engineerTo>
+<item key="FADCA6A3-A5D3-2F42-0CFF-C72FB4E7BAE2" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="Id_pasajero" id="8275D9AA-EED1-D457-9BF4-F3364FE04770">
+<createdBy>cutza</createdBy>
+<createdTime>2024-08-05 23:13:19 UTC</createdTime>
+<ownerDesignName>ModeloEstrella</ownerDesignName>
+<engineerTo>
+<item key="FADCA6A3-A5D3-2F42-0CFF-C72FB4E7BAE2" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Nombre" id="010128F5-7D29-085F-A92A-319784498B1F">
+<createdBy>cutza</createdBy>
+<createdTime>2024-08-05 23:13:36 UTC</createdTime>
+<ownerDesignName>ModeloEstrella</ownerDesignName>
+<engineerTo>
+<item key="FADCA6A3-A5D3-2F42-0CFF-C72FB4E7BAE2" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>50 CHAR</dataTypeSize>
+<ownDataTypeParameters>50 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Apellido" id="CD773B7F-2CFD-8A69-D5FB-133C8B2E4ADE">
+<createdBy>cutza</createdBy>
+<createdTime>2024-08-05 23:13:52 UTC</createdTime>
+<ownerDesignName>ModeloEstrella</ownerDesignName>
+<engineerTo>
+<item key="FADCA6A3-A5D3-2F42-0CFF-C72FB4E7BAE2" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Sexo" id="24DDAAD2-1436-59B3-D410-8F655E9B5220">
+<createdBy>cutza</createdBy>
+<createdTime>2024-08-05 23:14:37 UTC</createdTime>
+<ownerDesignName>ModeloEstrella</ownerDesignName>
+<engineerTo>
+<item key="FADCA6A3-A5D3-2F42-0CFF-C72FB4E7BAE2" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>10 CHAR</dataTypeSize>
+<ownDataTypeParameters>10 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Edad" id="C7086A4C-D3F5-8022-62B3-D660BBA272E9">
+<createdBy>cutza</createdBy>
+<createdTime>2024-08-05 23:14:59 UTC</createdTime>
+<ownerDesignName>ModeloEstrella</ownerDesignName>
+<engineerTo>
+<item key="FADCA6A3-A5D3-2F42-0CFF-C72FB4E7BAE2" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Nacionalidad" id="9107AE80-BDE8-CFAE-F2AC-7C29FA0B4625">
+<createdBy>cutza</createdBy>
+<createdTime>2024-08-05 23:15:07 UTC</createdTime>
+<ownerDesignName>ModeloEstrella</ownerDesignName>
+<engineerTo>
+<item key="FADCA6A3-A5D3-2F42-0CFF-C72FB4E7BAE2" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>50 CHAR</dataTypeSize>
+<ownDataTypeParameters>50 CHAR,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="606DB177-5573-889F-B494-5542006652B7" name="pasajero PK">
+<createdBy>cutza</createdBy>
+<createdTime>2024-08-05 23:13:30 UTC</createdTime>
+<ownerDesignName>ModeloEstrella</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="FADCA6A3-A5D3-2F42-0CFF-C72FB4E7BAE2" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>8275D9AA-EED1-D457-9BF4-F3364FE04770</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

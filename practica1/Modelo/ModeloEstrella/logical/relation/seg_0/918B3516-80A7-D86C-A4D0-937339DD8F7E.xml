@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Relation_2" directorySegmentName="seg_0" id="918B3516-80A7-D86C-A4D0-937339DD8F7E">
+<createdBy>cutza</createdBy>
+<createdTime>2024-08-05 23:22:15 UTC</createdTime>
+<ownerDesignName>ModeloEstrella</ownerDesignName>
+<engineerTo>
+<item key="FADCA6A3-A5D3-2F42-0CFF-C72FB4E7BAE2" value="true"/>
+</engineerTo>
+<sourcePk>48FCC473-CE5B-BC07-01D3-B254FDF41773</sourcePk>
+<identifying>true</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>547271FB-D934-F45F-2FF7-43D9DA90DFAA</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>0D160257-4C89-D534-2E58-B83B4DA23A73</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="ModeloEstrella" id="B18F0D5D-45FE-5DDC-6A5A-7A9A4016FE6F" version="3.5">
+<createdBy>cutza</createdBy>
+<createdTime>2024-08-05 23:09:06 UTC</createdTime>
+<ownerDesignName>Modeloestrella</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>B18F0D5D-45FE-5DDC-6A5A-7A9A4016FE6F</designId>
+</OSDM_Design>

@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="53D5F375-4C49-EA8D-1BE3-357C22F12273" containerWithKeyObject="CE7EE9A1-7003-791B-00B6-FDE2DC0937F6" localFKIndex="0FF681C5-D551-CACF-0652-0102DA84E04A" name="vuelos_pasajero_FK">
+<createdBy>cutza</createdBy>
+<createdTime>2024-08-05 23:30:31 UTC</createdTime>
+<generatorID>3202E21F-8EFC-76DE-8661-BA944DB45141</generatorID>
+<ownerDesignName>ModeloEstrella</ownerDesignName>
+<referredTableLongName>Pasajero</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>0B1D456E-13E5-4E5B-3E34-41541A4A2D4A</referredTableID>
+<keyObject>4FC00E32-0849-73CF-B90D-E73393EC14EF</keyObject>
+<referredKeyID>4FC00E32-0849-73CF-B90D-E73393EC14EF</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>Id_pasajero</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

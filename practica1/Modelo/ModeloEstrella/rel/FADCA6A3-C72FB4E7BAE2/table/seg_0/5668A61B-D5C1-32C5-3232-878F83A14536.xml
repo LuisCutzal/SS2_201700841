@@ -1,0 +1,49 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="5668A61B-D5C1-32C5-3232-878F83A14536" name="Piloto">
+<createdBy>cutza</createdBy>
+<createdTime>2024-08-05 23:30:31 UTC</createdTime>
+<generatorID>767DDAA9-9B81-50D4-AC38-879C0F368B21</generatorID>
+<ownerDesignName>ModeloEstrella</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Id_piloto" id="936F8B42-F740-AD3F-9922-E9F5BFCC32B0">
+<createdBy>cutza</createdBy>
+<createdTime>2024-08-05 23:30:31 UTC</createdTime>
+<generatorID>0C811FF8-595E-EED0-7D6E-D78B6CFF40FB</generatorID>
+<ownerDesignName>ModeloEstrella</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Nombre_piloto" id="0C80AB5D-F1C8-0B91-4676-1A42291D4E37">
+<createdBy>cutza</createdBy>
+<createdTime>2024-08-05 23:30:31 UTC</createdTime>
+<generatorID>3937307D-0D65-5B6E-9451-BF6A30A8968E</generatorID>
+<ownerDesignName>ModeloEstrella</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>50 CHAR</dataTypeSize>
+<ownDataTypeParameters>50 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="C11422CE-9392-8020-220B-2A918D3E82F6" name="piloto_PK">
+<createdBy>cutza</createdBy>
+<createdTime>2024-08-05 23:30:31 UTC</createdTime>
+<generatorID>1D845FCC-D212-849A-24A8-E47109B07F4D</generatorID>
+<ownerDesignName>ModeloEstrella</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="936F8B42-F740-AD3F-9922-E9F5BFCC32B0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,59 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="767DDAA9-9B81-50D4-AC38-879C0F368B21" name="Piloto">
+<createdBy>cutza</createdBy>
+<createdTime>2024-08-05 23:20:39 UTC</createdTime>
+<ownerDesignName>ModeloEstrella</ownerDesignName>
+<engineerTo>
+<item key="FADCA6A3-A5D3-2F42-0CFF-C72FB4E7BAE2" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="Id_piloto" id="0C811FF8-595E-EED0-7D6E-D78B6CFF40FB">
+<createdBy>cutza</createdBy>
+<createdTime>2024-08-05 23:20:46 UTC</createdTime>
+<ownerDesignName>ModeloEstrella</ownerDesignName>
+<engineerTo>
+<item key="FADCA6A3-A5D3-2F42-0CFF-C72FB4E7BAE2" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Nombre_piloto" id="3937307D-0D65-5B6E-9451-BF6A30A8968E">
+<createdBy>cutza</createdBy>
+<createdTime>2024-08-05 23:21:00 UTC</createdTime>
+<ownerDesignName>ModeloEstrella</ownerDesignName>
+<engineerTo>
+<item key="FADCA6A3-A5D3-2F42-0CFF-C72FB4E7BAE2" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>50 CHAR</dataTypeSize>
+<ownDataTypeParameters>50 CHAR,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="1D845FCC-D212-849A-24A8-E47109B07F4D" name="piloto PK">
+<createdBy>cutza</createdBy>
+<createdTime>2024-08-05 23:20:58 UTC</createdTime>
+<ownerDesignName>ModeloEstrella</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="FADCA6A3-A5D3-2F42-0CFF-C72FB4E7BAE2" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>0C811FF8-595E-EED0-7D6E-D78B6CFF40FB</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

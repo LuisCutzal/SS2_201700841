@@ -1,0 +1,115 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="0D160257-4C89-D534-2E58-B83B4DA23A73" name="Vuelo">
+<createdBy>cutza</createdBy>
+<createdTime>2024-08-05 23:10:16 UTC</createdTime>
+<ownerDesignName>ModeloEstrella</ownerDesignName>
+<engineerTo>
+<item key="FADCA6A3-A5D3-2F42-0CFF-C72FB4E7BAE2" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="Id_vuelo" id="9FBA01D3-2100-959F-33FA-FCEB13E516BE">
+<createdBy>cutza</createdBy>
+<createdTime>2024-08-05 23:10:28 UTC</createdTime>
+<ownerDesignName>ModeloEstrella</ownerDesignName>
+<engineerTo>
+<item key="FADCA6A3-A5D3-2F42-0CFF-C72FB4E7BAE2" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Estado_vuelo" id="5A091897-0A36-391E-971E-653C12AFF5DF">
+<createdBy>cutza</createdBy>
+<createdTime>2024-08-05 23:12:12 UTC</createdTime>
+<ownerDesignName>ModeloEstrella</ownerDesignName>
+<engineerTo>
+<item key="FADCA6A3-A5D3-2F42-0CFF-C72FB4E7BAE2" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>50 CHAR</dataTypeSize>
+<ownDataTypeParameters>50 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Fecha" id="8732980B-ABE5-63A2-E5EF-5C7A05644FFE">
+<createdBy>cutza</createdBy>
+<createdTime>2024-08-11 19:42:16 UTC</createdTime>
+<ownerDesignName>ModeloEstrella</ownerDesignName>
+<engineerTo>
+<item key="FADCA6A3-A5D3-2F42-0CFF-C72FB4E7BAE2" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>91229484-D19C-D458-8647-333C7FFE7B60</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Id_piloto" id="30A5BC45-C82B-6830-EA2D-637FD9F5C1DF">
+<createdBy>cutza</createdBy>
+<createdTime>2024-08-05 23:22:09 UTC</createdTime>
+<generatorID>B1EC51F4-9824-E954-9DC9-BBA0D6ACB4D9</generatorID>
+<ownerDesignName>ModeloEstrella</ownerDesignName>
+<engineerTo>
+<item key="FADCA6A3-A5D3-2F42-0CFF-C72FB4E7BAE2" value="true"/>
+</engineerTo>
+<referedAttribute>0C811FF8-595E-EED0-7D6E-D78B6CFF40FB</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Id_aeropuerto" id="80032ED1-1470-13FF-F9E7-EE1F76730D8F">
+<createdBy>cutza</createdBy>
+<createdTime>2024-08-05 23:22:15 UTC</createdTime>
+<generatorID>918B3516-80A7-D86C-A4D0-937339DD8F7E</generatorID>
+<ownerDesignName>ModeloEstrella</ownerDesignName>
+<engineerTo>
+<item key="FADCA6A3-A5D3-2F42-0CFF-C72FB4E7BAE2" value="true"/>
+</engineerTo>
+<referedAttribute>E10AC88D-9E58-7FAB-B82B-265F0A38CC70</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Id_pasajero" id="ADE6E007-060D-337D-CB3D-0266692880E2">
+<createdBy>cutza</createdBy>
+<createdTime>2024-08-05 23:22:19 UTC</createdTime>
+<generatorID>3202E21F-8EFC-76DE-8661-BA944DB45141</generatorID>
+<ownerDesignName>ModeloEstrella</ownerDesignName>
+<engineerTo>
+<item key="FADCA6A3-A5D3-2F42-0CFF-C72FB4E7BAE2" value="true"/>
+</engineerTo>
+<referedAttribute>8275D9AA-EED1-D457-9BF4-F3364FE04770</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="974B0465-7E1E-53FF-D266-B4F6F8203149" name="vuelos PK">
+<createdBy>cutza</createdBy>
+<createdTime>2024-08-05 23:11:02 UTC</createdTime>
+<ownerDesignName>ModeloEstrella</ownerDesignName>
+<engineerTo>
+<item key="FADCA6A3-A5D3-2F42-0CFF-C72FB4E7BAE2" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>9FBA01D3-2100-959F-33FA-FCEB13E516BE</attributeRef>
+<attributeRef>30A5BC45-C82B-6830-EA2D-637FD9F5C1DF</attributeRef>
+<attributeRef>80032ED1-1470-13FF-F9E7-EE1F76730D8F</attributeRef>
+<attributeRef>ADE6E007-060D-337D-CB3D-0266692880E2</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

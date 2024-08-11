@@ -1,0 +1,141 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="CE7EE9A1-7003-791B-00B6-FDE2DC0937F6" name="Vuelo">
+<createdBy>cutza</createdBy>
+<createdTime>2024-08-05 23:30:31 UTC</createdTime>
+<generatorID>0D160257-4C89-D534-2E58-B83B4DA23A73</generatorID>
+<ownerDesignName>ModeloEstrella</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Id_vuelo" id="763205BF-8751-4EF3-2333-74BABA5C5D09">
+<createdBy>cutza</createdBy>
+<createdTime>2024-08-05 23:30:31 UTC</createdTime>
+<generatorID>9FBA01D3-2100-959F-33FA-FCEB13E516BE</generatorID>
+<ownerDesignName>ModeloEstrella</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Estado_vuelo" id="D2B4F554-9AFA-E42A-3709-FA4B9B70AA68">
+<createdBy>cutza</createdBy>
+<createdTime>2024-08-05 23:30:31 UTC</createdTime>
+<generatorID>5A091897-0A36-391E-971E-653C12AFF5DF</generatorID>
+<ownerDesignName>ModeloEstrella</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>50 CHAR</dataTypeSize>
+<ownDataTypeParameters>50 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Fecha" id="C4468E32-3904-9ED0-D458-D6CDB7923D2A">
+<createdBy>cutza</createdBy>
+<createdTime>2024-08-11 19:42:45 UTC</createdTime>
+<generatorID>8732980B-ABE5-63A2-E5EF-5C7A05644FFE</generatorID>
+<ownerDesignName>ModeloEstrella</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>91229484-D19C-D458-8647-333C7FFE7B60</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="piloto_Id_piloto" id="180F74DA-28EE-6889-64F1-6C7D7101EE1E">
+<createdBy>cutza</createdBy>
+<createdTime>2024-08-05 23:30:31 UTC</createdTime>
+<generatorID>30A5BC45-C82B-6830-EA2D-637FD9F5C1DF</generatorID>
+<ownerDesignName>ModeloEstrella</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="11C619A4-31F4-2BD4-B977-08B25F278C20" referredColumn="936F8B42-F740-AD3F-9922-E9F5BFCC32B0"/>
+</associations>
+</Column>
+<Column name="aeropuerto_Id_aeropuerto" id="EB641F8C-A42B-B36E-2A2A-1C6719A17CE9">
+<createdBy>cutza</createdBy>
+<createdTime>2024-08-05 23:30:31 UTC</createdTime>
+<generatorID>80032ED1-1470-13FF-F9E7-EE1F76730D8F</generatorID>
+<ownerDesignName>ModeloEstrella</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="62DD888E-0AFC-11A0-4D5C-2F94E3E3A03C" referredColumn="B86F8159-7C43-E441-1663-6B6512116936"/>
+</associations>
+</Column>
+<Column name="pasajero_Id_pasajero" id="A6EF0473-B42A-B93B-55DC-69D6AE1962B3">
+<createdBy>cutza</createdBy>
+<createdTime>2024-08-05 23:30:31 UTC</createdTime>
+<generatorID>ADE6E007-060D-337D-CB3D-0266692880E2</generatorID>
+<ownerDesignName>ModeloEstrella</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="53D5F375-4C49-EA8D-1BE3-357C22F12273" referredColumn="1C8EAC7D-4377-718F-4C55-DD22392C8EEF"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="4AD1A788-4C68-EF22-6D44-77153232CC63" name="vuelos_PK">
+<createdBy>cutza</createdBy>
+<createdTime>2024-08-05 23:30:31 UTC</createdTime>
+<generatorID>974B0465-7E1E-53FF-D266-B4F6F8203149</generatorID>
+<ownerDesignName>ModeloEstrella</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="763205BF-8751-4EF3-2333-74BABA5C5D09"/>
+<colUsage columnID="180F74DA-28EE-6889-64F1-6C7D7101EE1E"/>
+<colUsage columnID="EB641F8C-A42B-B36E-2A2A-1C6719A17CE9"/>
+<colUsage columnID="A6EF0473-B42A-B93B-55DC-69D6AE1962B3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="97E5FCDC-2379-8389-85E1-B1852BDA0B06" name="vuelos_piloto_FK">
+<createdBy>cutza</createdBy>
+<createdTime>2024-08-05 23:30:31 UTC</createdTime>
+<generatorID>B1EC51F4-9824-E954-9DC9-BBA0D6ACB4D9</generatorID>
+<ownerDesignName>ModeloEstrella</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="180F74DA-28EE-6889-64F1-6C7D7101EE1E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="535A201C-5508-CBA2-2C64-D5F555DBD739" name="vuelos_aeropuerto_FK">
+<createdBy>cutza</createdBy>
+<createdTime>2024-08-05 23:30:31 UTC</createdTime>
+<generatorID>918B3516-80A7-D86C-A4D0-937339DD8F7E</generatorID>
+<ownerDesignName>ModeloEstrella</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EB641F8C-A42B-B36E-2A2A-1C6719A17CE9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="0FF681C5-D551-CACF-0652-0102DA84E04A" name="vuelos_pasajero_FK">
+<createdBy>cutza</createdBy>
+<createdTime>2024-08-05 23:30:31 UTC</createdTime>
+<generatorID>3202E21F-8EFC-76DE-8661-BA944DB45141</generatorID>
+<ownerDesignName>ModeloEstrella</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A6EF0473-B42A-B93B-55DC-69D6AE1962B3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

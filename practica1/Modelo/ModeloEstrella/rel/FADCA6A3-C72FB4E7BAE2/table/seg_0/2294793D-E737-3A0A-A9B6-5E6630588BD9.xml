@@ -1,0 +1,85 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="2294793D-E737-3A0A-A9B6-5E6630588BD9" name="Aeropuerto">
+<createdBy>cutza</createdBy>
+<createdTime>2024-08-05 23:30:31 UTC</createdTime>
+<generatorID>547271FB-D934-F45F-2FF7-43D9DA90DFAA</generatorID>
+<ownerDesignName>ModeloEstrella</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Id_aeropuerto" id="B86F8159-7C43-E441-1663-6B6512116936">
+<createdBy>cutza</createdBy>
+<createdTime>2024-08-05 23:30:31 UTC</createdTime>
+<generatorID>E10AC88D-9E58-7FAB-B82B-265F0A38CC70</generatorID>
+<ownerDesignName>ModeloEstrella</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Nombre_aeropuerto" id="E3A0AC78-6D07-7205-7A18-4EDC8C326608">
+<createdBy>cutza</createdBy>
+<createdTime>2024-08-05 23:30:31 UTC</createdTime>
+<generatorID>80652ECB-EE60-FE0C-148B-5130B31232CF</generatorID>
+<ownerDesignName>ModeloEstrella</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<ownDataTypeParameters>100 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Codigo_aeropuerto" id="E37E7D5A-882A-A65A-B581-4F5B27021FAA">
+<createdBy>cutza</createdBy>
+<createdTime>2024-08-05 23:30:31 UTC</createdTime>
+<generatorID>1B196285-84E3-ACFF-D93B-7F3EFEB46DE9</generatorID>
+<ownerDesignName>ModeloEstrella</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>15 CHAR</dataTypeSize>
+<ownDataTypeParameters>15 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Nombre_pais" id="DA73FBD7-1AFC-393F-3FC1-CC987444A7FE">
+<createdBy>cutza</createdBy>
+<createdTime>2024-08-05 23:30:31 UTC</createdTime>
+<generatorID>9E8A5072-7F89-BFBD-98E8-F7E6E00AA660</generatorID>
+<ownerDesignName>ModeloEstrella</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>50 CHAR</dataTypeSize>
+<ownDataTypeParameters>50 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Continente_aeropuerto" id="77D05A84-F1FF-2FA0-E80F-06874E0B5C35">
+<createdBy>cutza</createdBy>
+<createdTime>2024-08-05 23:30:31 UTC</createdTime>
+<generatorID>AFA7F1E9-E103-B9C2-C190-24098A9CDB84</generatorID>
+<ownerDesignName>ModeloEstrella</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>50 CHAR</dataTypeSize>
+<ownDataTypeParameters>50 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="21A09AA7-4652-2C89-79A3-9908D2F6ED6E" name="aeropuerto_PK">
+<createdBy>cutza</createdBy>
+<createdTime>2024-08-05 23:30:31 UTC</createdTime>
+<generatorID>48FCC473-CE5B-BC07-01D3-B254FDF41773</generatorID>
+<ownerDesignName>ModeloEstrella</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B86F8159-7C43-E441-1663-6B6512116936"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
