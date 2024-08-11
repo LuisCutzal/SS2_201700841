@@ -1,8 +1,23 @@
 import pyodbc
+import csv
+import re
+def preprocess_csv(input_file_path, output_file_path):
+    with open(input_file_path, 'r', newline='', encoding='utf-8') as infile, \
+         open(output_file_path, 'w', newline='', encoding='utf-8') as outfile:
+        
+        reader = infile.read()
+        
+        # Usar una expresión regular para eliminar las comas dentro de las comillas dobles
+        processed_reader = re.sub(r'(?<=\")(.*?),(.*?)(?=\")', lambda m: f'{m.group(1).replace(",", " ")}{m.group(2)}', reader)
+        
+        # Escribir el contenido procesado en el nuevo archivo
+        outfile.write(processed_reader)
 
 def extract_information(file_path, conexion):
     try:
         cursor = conexion.cursor()
+        
+        # Crear o reemplazar la tabla temporal
         cursor.execute('''
         IF OBJECT_ID('TempData', 'U') IS NOT NULL
             DROP TABLE TempData;
@@ -26,10 +41,16 @@ def extract_information(file_path, conexion):
         );
         ''')
 
-        # Usar una ruta absoluta para el archivo CSV
+        # Usar la ruta del archivo CSV procesado
+        processed_file_path = file_path.replace('.csv', '_processed.csv')
+
+        # Ejecutar el preprocesamiento
+        preprocess_csv(file_path, processed_file_path)
+        
+        # Cargar los datos desde el archivo CSV procesado
         cursor.execute(f'''
         BULK INSERT TempData
-        FROM '{file_path}'
+        FROM '{processed_file_path}'
         WITH (
             FIELDTERMINATOR = ',',
             ROWTERMINATOR = '\\n',
