@@ -5,13 +5,16 @@ def preprocess_csv(input_file_path, output_file_path):
     with open(input_file_path, 'r', newline='', encoding='utf-8') as infile, \
          open(output_file_path, 'w', newline='', encoding='utf-8') as outfile:
         
-        reader = infile.read()
-        
-        # Usar una expresión regular para eliminar las comas dentro de las comillas dobles
-        processed_reader = re.sub(r'(?<=\")(.*?),(.*?)(?=\")', lambda m: f'{m.group(1).replace(",", " ")}{m.group(2)}', reader)
-        
-        # Escribir el contenido procesado en el nuevo archivo
-        outfile.write(processed_reader)
+        # Leer el archivo línea por línea
+        for line in infile:
+            # Verificar si la línea contiene comillas dobles
+            if '"' in line:
+                # Si la línea contiene comillas dobles, omitirla
+                continue
+
+            # Escribir la línea en el archivo de salida si no contiene comillas dobles
+            outfile.write(line)
+
 
 def extract_information(file_path, conexion):
     try:
@@ -76,19 +79,19 @@ def clean_and_load_data(conexion):
         cursor.execute("""
         UPDATE TempData
         SET
-            FirstName = REPLACE(REPLACE(REPLACE(FirstName, ';', ''), '"', ''), '''', ''),
-            LastName = REPLACE(REPLACE(REPLACE(LastName, ';', ''), '"', ''), '''', ''),
-            Gender = REPLACE(REPLACE(REPLACE(Gender, ';', ''), '"', ''), '''', ''),
-            Nationality = REPLACE(REPLACE(REPLACE(Nationality, ';', ''), '"', ''), '''', ''),
-            AirportName = REPLACE(REPLACE(REPLACE(AirportName, ';', ''), '"', ''), '''', ''),
-            AirportCountryCode = REPLACE(REPLACE(REPLACE(AirportCountryCode, ';', ''), '"', ''), '''', ''),
-            CountryName = REPLACE(REPLACE(REPLACE(CountryName, ';', ''), '"', ''), '''', ''),
-            AirportContinent = REPLACE(REPLACE(REPLACE(AirportContinent, ';', ''), '"', ''), '''', ''),
-            Continents = REPLACE(REPLACE(REPLACE(Continents, ';', ''), '"', ''), '''', ''),
-            DepartureDate = REPLACE(REPLACE(REPLACE(DepartureDate, ';', ''), '"', ''), '''', ''),
-            ArrivalAirport = REPLACE(REPLACE(REPLACE(ArrivalAirport, ';', ''), '"', ''), '''', ''),
-            PilotName = REPLACE(REPLACE(REPLACE(PilotName, ';', ''), '"', ''), '''', ''),
-            FlightStatus = REPLACE(REPLACE(REPLACE(FlightStatus, ';', ''), '"', ''), '''', '');
+            FirstName = REPLACE(FirstName, ';', ''),
+            LastName = REPLACE(LastName, ';', ''),
+            Gender = REPLACE(Gender, ';', ''),
+            Nationality = REPLACE(Nationality, ';', ''),
+            AirportName = REPLACE(AirportName, ';', ''),
+            AirportCountryCode = REPLACE(AirportCountryCode, ';', ''),
+            CountryName = REPLACE(CountryName, ';', ''),
+            AirportContinent = REPLACE(AirportContinent, ';', ''),
+            Continents = REPLACE(Continents, ';', ''),
+            DepartureDate = REPLACE(DepartureDate, ';', ''),
+            ArrivalAirport = REPLACE(ArrivalAirport, ';', ''),
+            PilotName = REPLACE(PilotName, ';', ''),
+            FlightStatus = REPLACE(FlightStatus, ';', '');
         """)
 
         # Convertir fechas a formato YYYY-MM-DD
@@ -130,16 +133,7 @@ def clean_and_load_data(conexion):
         WHERE rn > 1;
         """)
 
-        # Insertar datos en la tabla Fecha
-        cursor.execute("""
-        INSERT INTO Fecha (Year, Month, Day)
-        SELECT DISTINCT 
-            YEAR(TRY_CONVERT(DATE, DepartureDate, 101)) AS Year,
-            MONTH(TRY_CONVERT(DATE, DepartureDate, 101)) AS Month,
-            DAY(TRY_CONVERT(DATE, DepartureDate, 101)) AS Day
-        FROM TempData
-        WHERE TRY_CONVERT(DATE, DepartureDate, 101) IS NOT NULL;
-        """)
+        
 
         # Insertar datos en las tablas de dimensiones
         cursor.execute("""
@@ -162,17 +156,14 @@ def clean_and_load_data(conexion):
 
         # Insertar datos en la tabla hechos_vuelo
         cursor.execute("""
-        INSERT INTO Vuelo (Estado, Id_pasajero, Id_aeropuerto, Id_piloto, Id_fecha)
+        INSERT INTO Vuelo (Estado, Fecha, Id_pasajero, Id_aeropuerto)
         SELECT 
-            DISTINCT td.FlightStatus AS Estado,
-            (SELECT Id_pasajero FROM Pasajero WHERE identificacion = td.PassengerID) AS Id_pasajero,
-            (SELECT Id_aeropuerto FROM Aeropuerto WHERE Nombre = td.ArrivalAirport) AS Id_aeropuerto,
-            (SELECT Id_piloto FROM Piloto WHERE Nombre = td.PilotName) AS Id_piloto,
-            (SELECT Id_fecha FROM Fecha 
-            WHERE year = YEAR(TRY_CONVERT(DATE, td.DepartureDate, 101))
-            AND month = MONTH(TRY_CONVERT(DATE, td.DepartureDate, 101))
-            AND day = DAY(TRY_CONVERT(DATE, td.DepartureDate, 101))) AS Id_fecha
-        FROM TempData td;
+            DISTINCT td.FlightStatus AS Estado, td.DepartureDate AS Fecha,
+            p.Id_pasajero,
+            a.Id_aeropuerto
+        FROM TempData td
+        LEFT JOIN Pasajero p ON p.Identificacion = td.PassengerID
+        LEFT JOIN Aeropuerto a ON a.Nombre = td.AirportName;
         """)
 
         conexion.commit()
