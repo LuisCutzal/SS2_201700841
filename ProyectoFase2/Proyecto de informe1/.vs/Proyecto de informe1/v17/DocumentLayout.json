@@ -1,0 +1,114 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\cutza\\Desktop\\usac\\2024\\SegundoSemestre2024\\semi2\\lab\\SS2_201700841\\ProyectoFase2\\Proyecto de informe1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2653320D-5175-4D2F-9815-09C0A0055983}|Proyecto de informe1.rptproj|C:\\Users\\cutza\\Desktop\\usac\\2024\\SegundoSemestre2024\\semi2\\lab\\SS2_201700841\\ProyectoFase2\\Proyecto de informe1\\Report2_ventas3.rdl||{420F4200-DD61-4785-81F3-52669CBC208E}",
+      "RelativeMoniker": "D:0:0:{2653320D-5175-4D2F-9815-09C0A0055983}|Proyecto de informe1.rptproj|solutionrelative:Report2_ventas3.rdl||{420F4200-DD61-4785-81F3-52669CBC208E}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2653320D-5175-4D2F-9815-09C0A0055983}|Proyecto de informe1.rptproj|C:\\Users\\cutza\\Desktop\\usac\\2024\\SegundoSemestre2024\\semi2\\lab\\SS2_201700841\\ProyectoFase2\\Proyecto de informe1\\Report2_ventas2.rdl||{420F4200-DD61-4785-81F3-52669CBC208E}",
+      "RelativeMoniker": "D:0:0:{2653320D-5175-4D2F-9815-09C0A0055983}|Proyecto de informe1.rptproj|solutionrelative:Report2_ventas2.rdl||{420F4200-DD61-4785-81F3-52669CBC208E}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2653320D-5175-4D2F-9815-09C0A0055983}|Proyecto de informe1.rptproj|C:\\Users\\cutza\\Desktop\\usac\\2024\\SegundoSemestre2024\\semi2\\lab\\SS2_201700841\\ProyectoFase2\\Proyecto de informe1\\Report2_ventas.rdl||{420F4200-DD61-4785-81F3-52669CBC208E}",
+      "RelativeMoniker": "D:0:0:{2653320D-5175-4D2F-9815-09C0A0055983}|Proyecto de informe1.rptproj|solutionrelative:Report2_ventas.rdl||{420F4200-DD61-4785-81F3-52669CBC208E}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2653320D-5175-4D2F-9815-09C0A0055983}|Proyecto de informe1.rptproj|C:\\Users\\cutza\\Desktop\\usac\\2024\\SegundoSemestre2024\\semi2\\lab\\SS2_201700841\\ProyectoFase2\\Proyecto de informe1\\Report1_Comp3.rdl||{420F4200-DD61-4785-81F3-52669CBC208E}",
+      "RelativeMoniker": "D:0:0:{2653320D-5175-4D2F-9815-09C0A0055983}|Proyecto de informe1.rptproj|solutionrelative:Report1_Comp3.rdl||{420F4200-DD61-4785-81F3-52669CBC208E}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2653320D-5175-4D2F-9815-09C0A0055983}|Proyecto de informe1.rptproj|C:\\Users\\cutza\\Desktop\\usac\\2024\\SegundoSemestre2024\\semi2\\lab\\SS2_201700841\\ProyectoFase2\\Proyecto de informe1\\Report1_COMP2.rdl||{420F4200-DD61-4785-81F3-52669CBC208E}",
+      "RelativeMoniker": "D:0:0:{2653320D-5175-4D2F-9815-09C0A0055983}|Proyecto de informe1.rptproj|solutionrelative:Report1_COMP2.rdl||{420F4200-DD61-4785-81F3-52669CBC208E}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2653320D-5175-4D2F-9815-09C0A0055983}|Proyecto de informe1.rptproj|C:\\Users\\cutza\\Desktop\\usac\\2024\\SegundoSemestre2024\\semi2\\lab\\SS2_201700841\\ProyectoFase2\\Proyecto de informe1\\Report1_Comp.rdl||{420F4200-DD61-4785-81F3-52669CBC208E}",
+      "RelativeMoniker": "D:0:0:{2653320D-5175-4D2F-9815-09C0A0055983}|Proyecto de informe1.rptproj|solutionrelative:Report1_Comp.rdl||{420F4200-DD61-4785-81F3-52669CBC208E}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Report2_ventas3.rdl [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\cutza\\Desktop\\usac\\2024\\SegundoSemestre2024\\semi2\\lab\\SS2_201700841\\ProyectoFase2\\Proyecto de informe1\\Report2_ventas3.rdl",
+              "RelativeDocumentMoniker": "Report2_ventas3.rdl",
+              "ToolTip": "C:\\Users\\cutza\\Desktop\\usac\\2024\\SegundoSemestre2024\\semi2\\lab\\SS2_201700841\\ProyectoFase2\\Proyecto de informe1\\Report2_ventas3.rdl [Dise\u00F1o]",
+              "RelativeToolTip": "Report2_ventas3.rdl [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-10-25T20:25:08.599Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Report2_ventas2.rdl [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\cutza\\Desktop\\usac\\2024\\SegundoSemestre2024\\semi2\\lab\\SS2_201700841\\ProyectoFase2\\Proyecto de informe1\\Report2_ventas2.rdl",
+              "RelativeDocumentMoniker": "Report2_ventas2.rdl",
+              "ToolTip": "C:\\Users\\cutza\\Desktop\\usac\\2024\\SegundoSemestre2024\\semi2\\lab\\SS2_201700841\\ProyectoFase2\\Proyecto de informe1\\Report2_ventas2.rdl [Dise\u00F1o]",
+              "RelativeToolTip": "Report2_ventas2.rdl [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-10-25T20:04:53.412Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Report2_ventas.rdl [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\cutza\\Desktop\\usac\\2024\\SegundoSemestre2024\\semi2\\lab\\SS2_201700841\\ProyectoFase2\\Proyecto de informe1\\Report2_ventas.rdl",
+              "RelativeDocumentMoniker": "Report2_ventas.rdl",
+              "ToolTip": "C:\\Users\\cutza\\Desktop\\usac\\2024\\SegundoSemestre2024\\semi2\\lab\\SS2_201700841\\ProyectoFase2\\Proyecto de informe1\\Report2_ventas.rdl [Dise\u00F1o]",
+              "RelativeToolTip": "Report2_ventas.rdl [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-10-25T19:08:06.448Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Report1_Comp3.rdl [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\cutza\\Desktop\\usac\\2024\\SegundoSemestre2024\\semi2\\lab\\SS2_201700841\\ProyectoFase2\\Proyecto de informe1\\Report1_Comp3.rdl",
+              "RelativeDocumentMoniker": "Report1_Comp3.rdl",
+              "ToolTip": "C:\\Users\\cutza\\Desktop\\usac\\2024\\SegundoSemestre2024\\semi2\\lab\\SS2_201700841\\ProyectoFase2\\Proyecto de informe1\\Report1_Comp3.rdl [Dise\u00F1o]",
+              "RelativeToolTip": "Report1_Comp3.rdl [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-10-25T18:43:42.053Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Report1_COMP2.rdl [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\cutza\\Desktop\\usac\\2024\\SegundoSemestre2024\\semi2\\lab\\SS2_201700841\\ProyectoFase2\\Proyecto de informe1\\Report1_COMP2.rdl",
+              "RelativeDocumentMoniker": "Report1_COMP2.rdl",
+              "ToolTip": "C:\\Users\\cutza\\Desktop\\usac\\2024\\SegundoSemestre2024\\semi2\\lab\\SS2_201700841\\ProyectoFase2\\Proyecto de informe1\\Report1_COMP2.rdl [Dise\u00F1o]",
+              "RelativeToolTip": "Report1_COMP2.rdl [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-10-25T18:31:12.958Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Report1_Comp.rdl [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\cutza\\Desktop\\usac\\2024\\SegundoSemestre2024\\semi2\\lab\\SS2_201700841\\ProyectoFase2\\Proyecto de informe1\\Report1_Comp.rdl",
+              "RelativeDocumentMoniker": "Report1_Comp.rdl",
+              "ToolTip": "C:\\Users\\cutza\\Desktop\\usac\\2024\\SegundoSemestre2024\\semi2\\lab\\SS2_201700841\\ProyectoFase2\\Proyecto de informe1\\Report1_Comp.rdl [Dise\u00F1o]",
+              "RelativeToolTip": "Report1_Comp.rdl [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-10-25T18:02:34.297Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

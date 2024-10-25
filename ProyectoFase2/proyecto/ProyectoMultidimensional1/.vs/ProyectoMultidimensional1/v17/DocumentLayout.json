@@ -1,0 +1,36 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\cutza\\Desktop\\usac\\2024\\SegundoSemestre2024\\semi2\\lab\\SS2_201700841\\ProyectoFase2\\proyecto\\ProyectoMultidimensional1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F2E03A54-7D6F-4A6E-9B6D-F4BB4CF2F12C}|ProyectoMultidimensional1.dwproj|C:\\Users\\cutza\\Desktop\\usac\\2024\\SegundoSemestre2024\\semi2\\lab\\SS2_201700841\\ProyectoFase2\\proyecto\\ProyectoMultidimensional1\\Seminario2_201700841.cube||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{F2E03A54-7D6F-4A6E-9B6D-F4BB4CF2F12C}|ProyectoMultidimensional1.dwproj|solutionrelative:Seminario2_201700841.cube||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Seminario2_201700841.cube [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\cutza\\Desktop\\usac\\2024\\SegundoSemestre2024\\semi2\\lab\\SS2_201700841\\ProyectoFase2\\proyecto\\ProyectoMultidimensional1\\Seminario2_201700841.cube",
+              "RelativeDocumentMoniker": "Seminario2_201700841.cube",
+              "ToolTip": "C:\\Users\\cutza\\Desktop\\usac\\2024\\SegundoSemestre2024\\semi2\\lab\\SS2_201700841\\ProyectoFase2\\proyecto\\ProyectoMultidimensional1\\Seminario2_201700841.cube [Dise\u00F1o]",
+              "RelativeToolTip": "Seminario2_201700841.cube [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-10-22T17:31:29.37Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
